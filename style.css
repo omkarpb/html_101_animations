@@ -1,0 +1,64 @@
+body {
+  font-family: sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ball {
+  height: 10px;
+  width: 10px;
+  background-color: black;
+  border-radius: 10px;
+  transition: transform 3s ease 0.5s;
+}
+
+.ball.translate:hover {
+  transform: translate(100px, 0px);
+}
+
+.ball.scale:hover {
+  transform: scale(3);
+}
+
+.ball.rotate:hover {
+  border-radius: 0px;
+  transform: rotate(45deg);
+}
+
+.ball.multiple:hover {
+  border-radius: 0px;
+  transform: rotate(45deg) translate(100px, 0px) scale(3);
+}
+.pad {
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(black, blue);
+}
+
+.pad.skew {
+  transform: skew(10deg, 10deg)
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: cadetblue;
+  animation: boxAnimate 3s ease-in-out 0.5s infinite alternate-reverse forwards;
+}
+
+@keyframes boxAnimate {
+  from {
+    transform: translate(0px) rotate(0deg) skew(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translate(500px) rotate(90deg) skew(20deg);
+    opacity:0.5
+  }
+}
